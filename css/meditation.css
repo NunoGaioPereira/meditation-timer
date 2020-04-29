@@ -22,3 +22,24 @@
   input[type="number"] {
       -moz-appearance: textfield;
   }
+
+  h3 {
+      font-size: 42px;
+      text-align: center;
+      margin: 30px 0;
+  }
+
+  .time-picker {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      max-width: 200px;
+      background-color: #f3f3f3;
+      border-radius: 8px;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+      color: #53565a;
+      font-size: 42px;
+      font-weight: 700;
+      user-select: none;
+  }
