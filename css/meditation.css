@@ -105,3 +105,14 @@ h3 {
     border-bottom-color: #53565a;
     border-top-color: #53565a;
 }
+
+.modal {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: coral;
+    opacity: 1;
+    pointer-events: none;
+}
