@@ -3,14 +3,15 @@
     padding: 0;
     box-sizing: border-box;
 }
-  
+
 .app {
-height: 100vh;
+    height: 100vh;
 }
 
 body {
-    background-color: #ffce00;
-    font-family: 'Saira', sans-serif;
+    /* background-color: #ffce00; */
+    background-color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
 }
 
 input[type="number"]::-webkit-outer-spin-button, 
