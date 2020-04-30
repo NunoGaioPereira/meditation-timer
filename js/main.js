@@ -19,6 +19,9 @@ hr_down.addEventListener('click', hour_down);
 min_up.addEventListener('click', minute_up);
 min_down.addEventListener('click', minute_down);
 
+hr_element.addEventListener('change', hour_change);
+min_element.addEventListener('change', minute_change);
+
 function hour_up () {
     hour++;
     if (hour > 23) {
@@ -39,7 +42,7 @@ function minute_up () {
     minute++;
     if (minute > 59) {
         minute = 0;
-        hour++;
+        hour_up();
     }
     setTime();
 }
@@ -66,4 +69,34 @@ function formatTime(time) {
         time = '0' + time;
     }
     return time;
+}
+
+function hour_change (e) {
+    if (e.target.value > 23) {
+        e.target.value = 23;
+    }
+    else if (e.target.value < 0) {
+        e.target.value = '00';
+    }
+
+    if (e.target.value == "") {
+        e.target.value = formatTime(hour);
+    }
+
+    hour = e.target.value;
+}
+
+function minute_change (e) {
+    if (e.target.value > 59) {
+        e.target.value = 59;
+    }
+    else if (e.target.value < 0) {
+        e.target.value = '00';
+    }
+
+    if (e.target.value == "") {
+        e.target.value = formatTime(minute);
+    }
+
+    minute = e.target.value;
 }
