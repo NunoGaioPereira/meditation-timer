@@ -152,7 +152,7 @@ const app = () => {
             // video.src = this.getAttribute('data-video');
 
             checkPlaying(song);
-            activateButtons();
+            activateButtons(sound);
         }); 
     });
 
@@ -203,25 +203,35 @@ const app = () => {
 
     // Animate circle
     song.ontimeupdate = () => {
-    let currentTime = song.currentTime;
-    let elapsed = fakeDuration - currentTime;
-    let seconds = Math.floor(elapsed % 60);
-    let minutes = Math.floor(elapsed / 60);
+        let currentTime = song.currentTime;
+        let elapsed = fakeDuration - currentTime;
+        let seconds = Math.floor(elapsed % 60);
+        let minutes = Math.floor(elapsed / 60);
 
-    // Animate circle
-    let progress = outlineLenght - (currentTime / fakeDuration) * outlineLenght;
-    outline.style.strokeDashoffset = progress;
+        // Animate circle
+        let progress = outlineLenght - (currentTime / fakeDuration) * outlineLenght;
+        outline.style.strokeDashoffset = progress;
 
-    // Animate text
-    if(seconds == 0) { timeDisplay.textContent = `${minutes}:${seconds}0`; }
-    else { timeDisplay.textContent = `${minutes}:${seconds}`; }
+        // Animate text
+        if(seconds == 0) { timeDisplay.textContent = `${minutes}:${seconds}0`; }
+        else { timeDisplay.textContent = `${minutes}:${seconds}`; }
 
-    if(currentTime >= fakeDuration) {
-      song.pause();
-      song.currentTime = 0;
-      play.src = './includes/imgs/play.svg';
-      video.pause();
+        if(currentTime >= fakeDuration) {
+          song.pause();
+          song.currentTime = 0;
+          play.src = './includes/imgs/play.svg';
+          video.pause();
+        }
     }
+
+    function activateButtons (cur_sound) {
+        // Pick sound
+        sounds.forEach(sound =>{
+            if(sound.classList.contains("active")) {
+                sound.classList.remove('active');
+            }
+            cur_sound.classList.add('active');
+        });
     }
 };
 
