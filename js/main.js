@@ -1,192 +1,195 @@
-const time_picker_element = document.querySelector('.time-picker');
-
-const hr_element = document.querySelector('.time-picker .hour .hr');
-const min_element = document.querySelector('.time-picker .minute .min');
-
-const hr_up = document.querySelector('.time-picker .hour .hr-up');
-const hr_down = document.querySelector('.time-picker .hour .hr-down');
-
-const min_up = document.querySelector('.time-picker .minute .min-up');
-const min_down = document.querySelector('.time-picker .minute .min-down');
-
-const start = document.getElementById('start');
-const modal = document.querySelector('.modal');
-const cross = document.querySelector('.cross');
-const app_body = document.querySelector('.app');
-
-
-start.addEventListener('click', openModal);
-cross.addEventListener('click', closeModal);
-
-let hour = 0;
-let minute = 10;
-
-// Event listeners
-hr_up.addEventListener('click', hour_up);
-hr_down.addEventListener('click', hour_down);
-
-min_up.addEventListener('click', minute_up);
-min_down.addEventListener('click', minute_down);
-
-hr_element.addEventListener('change', hour_change);
-min_element.addEventListener('change', minute_change);
-
-function hour_up () {
-    hour++;
-    if (hour > 23) {
-        hour = 0;
-    }
-    setTime();
-}
-
-function hour_down () {
-    hour--;
-    if (hour < 0) {
-        hour = 0;
-    }
-    setTime();
-}
-
-function minute_up () {
-    minute++;
-    if (minute > 59) {
-        minute = 0;
-        hour_up();
-    }
-    setTime();
-}
-
-function minute_down () {
-    if (minute == 0) {
-        minute = 0;
-        // hour--;
-    }
-    else {
-        minute--;
-    }
-    setTime();
-}
-
-function setTime() {
-    hr_element.value = formatTime(hour);
-    min_element.value = formatTime(minute);
-    time_picker_element.dataset.time = formatTime(hour) + ':' + formatTime(minute);
-}
-
-function formatTime(time) {
-    if (time < 10) {
-        time = '0' + time;
-    }
-    return time;
-}
-
-function hour_change (e) {
-    if (e.target.value > 23) {
-        e.target.value = 23;
-    }
-    else if (e.target.value < 0) {
-        e.target.value = '00';
-    }
-
-    if (e.target.value == "") {
-        e.target.value = formatTime(hour);
-    }
-
-    hour = e.target.value;
-}
-
-function minute_change (e) {
-    if (e.target.value > 59) {
-        e.target.value = 59;
-    }
-    else if (e.target.value < 0) {
-        e.target.value = '00';
-    }
-
-    if (e.target.value == "") {
-        e.target.value = formatTime(minute);
-    }
-
-    minute = e.target.value;
-}
-
-function openModal () {
-    modal.classList.toggle('open');
-    app_body.classList.toggle('open');
-}
-
-function closeModal () {
-    modal.classList.toggle('open');
-    app_body.classList.toggle('open');
-}
-
 const app = () => {
-  const song = document.querySelector('.song');
-  const play = document.querySelector('.play');
-  const outline = document.querySelector('.moving-outline circle');
-  const video = document.querySelector('.video-container video');
 
-  // Sounds
-  const sounds = document.querySelectorAll('.sound-picker button');
-  // Time display
-  const timeDisplay = document.querySelector('.time-display');
-  const timeSelect = document.querySelectorAll('.time-select button');
-  // Length of outline
-  const outlineLenght = outline.getTotalLength();
-  // Duration
-  let fakeDuration = 600;
+    const time_picker_element = document.querySelector('.time-picker');
+
+    const hr_element = document.querySelector('.time-picker .hour .hr');
+    const min_element = document.querySelector('.time-picker .minute .min');
+
+    const hr_up = document.querySelector('.time-picker .hour .hr-up');
+    const hr_down = document.querySelector('.time-picker .hour .hr-down');
+
+    const min_up = document.querySelector('.time-picker .minute .min-up');
+    const min_down = document.querySelector('.time-picker .minute .min-down');
+
+    const start = document.getElementById('start');
+    const modal = document.querySelector('.modal');
+    const cross = document.querySelector('.cross');
+    const app_body = document.querySelector('.app');
 
 
-  // Animate outline
-  outline.style.strokeDasharray = outlineLenght; //Total length // 100 px between each dash
-  outline.style.strokeDashoffset = outlineLenght; // hide
+    start.addEventListener('click', openModal);
+    cross.addEventListener('click', closeModal);
 
-  // Pick sound
-  sounds.forEach(sound =>{
+    let hour = 0;
+    let minute = 10;
+
+    // Event listeners
+    hr_up.addEventListener('click', hour_up);
+    hr_down.addEventListener('click', hour_down);
+
+    min_up.addEventListener('click', minute_up);
+    min_down.addEventListener('click', minute_down);
+
+    hr_element.addEventListener('change', hour_change);
+    min_element.addEventListener('change', minute_change);
+
+    function hour_up () {
+        hour++;
+        if (hour > 23) {
+            hour = 0;
+        }
+        setTime();
+    }
+
+    function hour_down () {
+        hour--;
+        if (hour < 0) {
+            hour = 0;
+        }
+        setTime();
+    }
+
+    function minute_up () {
+        minute++;
+        if (minute > 59) {
+            minute = 0;
+            hour_up();
+        }
+        setTime();
+    }
+
+    function minute_down () {
+        if (minute == 0) {
+            minute = 0;
+            // hour--;
+        }
+        else {
+            minute--;
+        }
+        setTime();
+    }
+
+    function setTime() {
+        hr_element.value = formatTime(hour);
+        min_element.value = formatTime(minute);
+        time_picker_element.dataset.time = formatTime(hour) + ':' + formatTime(minute);
+    }
+
+    function formatTime(time) {
+        if (time < 10) {
+            time = '0' + time;
+        }
+        return time;
+    }
+
+    function hour_change (e) {
+        if (e.target.value > 23) {
+            e.target.value = 23;
+        }
+        else if (e.target.value < 0) {
+            e.target.value = '00';
+        }
+
+        if (e.target.value == "") {
+            e.target.value = formatTime(hour);
+        }
+
+        hour = e.target.value;
+    }
+
+    function minute_change (e) {
+        if (e.target.value > 59) {
+            e.target.value = 59;
+        }
+        else if (e.target.value < 0) {
+            e.target.value = '00';
+        }
+
+        if (e.target.value == "") {
+            e.target.value = formatTime(minute);
+        }
+
+        minute = e.target.value;
+    }
+
+    function openModal () {
+        modal.classList.toggle('open');
+        app_body.classList.toggle('open');
+        play.classList.toggle('open');
+    }
+
+    function closeModal () {
+        checkPlaying(song);
+        modal.classList.toggle('open');
+        app_body.classList.toggle('open');
+        play.classList.toggle('open');
+    }
+
+    const song = document.querySelector('.song');
+    const play = document.querySelector('.play');
+    const outline = document.querySelector('.moving-outline circle');
+    const video = document.querySelector('.video-container video');
+
+    // Sounds
+    const sounds = document.querySelectorAll('.sound-picker button');
+    // Time display
+    const timeDisplay = document.querySelector('.time-display');
+    const timeSelect = document.querySelectorAll('.time-select button');
+    // Length of outline
+    const outlineLenght = outline.getTotalLength();
+    // Duration
+    let fakeDuration = 600;
+
+
+    // Animate outline
+    outline.style.strokeDasharray = outlineLenght; //Total length // 100 px between each dash
+    outline.style.strokeDashoffset = outlineLenght; // hide
+
+    // Pick sound
+    sounds.forEach(sound =>{
     sound.addEventListener('click', function(){
         song.src = this.getAttribute('data-sound');
         video.src = this.getAttribute('data-video');
         checkPlaying(song);
     }); 
-  });
+    });
 
-  // Play sound
-  play.addEventListener('click', () => {
-    checkPlaying(song);
-  });
+    // Play sound
+    play.addEventListener('click', () => {
+        checkPlaying(song);
+    });
 
+    // Select sound
+    timeSelect.forEach(option =>{
+        option.addEventListener('click', function(){
+          // use function() to be able to use this
+          song.currentTime = 0; // reset time
+          fakeDuration = this.getAttribute('data-time');
+          timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${Math.floor(fakeDuration % 60)}0`;
+          // Pause everything
+          song.pause();
+          song.currentTime = 0;
+          play.src = './includes/imgs/play.svg';
+          video.pause();
+        })
+    });
 
-  // Select sound
-  timeSelect.forEach(option =>{
-    option.addEventListener('click', function(){
-      // use function() to be able to use this
-      song.currentTime = 0; // reset time
-      fakeDuration = this.getAttribute('data-time');
-      timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${Math.floor(fakeDuration % 60)}0`;
-      // Pause everything
-      song.pause();
-      song.currentTime = 0;
-      play.src = './includes/imgs/play.svg';
-      video.pause();
-    })
-  });
-
-  // Stop and play the sounds
-  const checkPlaying = song =>{
+    // Stop and play the sounds
+    const checkPlaying = song =>{
     if (song.paused) {
       song.play();
-      video.play();
+      // video.play();
       play.src = "./includes/imgs/pause.svg";
     }
     else {
       song.pause();
-      video.pause();
+      // video.pause();
       play.src = "./includes/imgs/play.svg"; 
     }
-  };
+    };
 
-  // Animate circle
-  song.ontimeupdate = () => {
+    // Animate circle
+    song.ontimeupdate = () => {
     let currentTime = song.currentTime;
     let elapsed = fakeDuration - currentTime;
     let seconds = Math.floor(elapsed % 60);
@@ -206,7 +209,7 @@ const app = () => {
       play.src = './includes/imgs/play.svg';
       video.pause();
     }
-  }
+    }
 };
 
 app();
