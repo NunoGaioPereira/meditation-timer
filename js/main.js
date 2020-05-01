@@ -12,7 +12,7 @@ const min_down = document.querySelector('.time-picker .minute .min-down');
 const start = document.getElementById('start');
 const modal = document.querySelector('.modal');
 const cross = document.querySelector('.cross');
-const app = document.querySelector('.app');
+const app_body = document.querySelector('.app');
 
 
 start.addEventListener('click', openModal);
@@ -112,10 +112,101 @@ function minute_change (e) {
 
 function openModal () {
     modal.classList.toggle('open');
-    app.classList.toggle('open');
+    app_body.classList.toggle('open');
 }
 
 function closeModal () {
     modal.classList.toggle('open');
-    app.classList.toggle('open');
+    app_body.classList.toggle('open');
 }
+
+const app = () => {
+  const song = document.querySelector('.song');
+  const play = document.querySelector('.play');
+  const outline = document.querySelector('.moving-outline circle');
+  const video = document.querySelector('.video-container video');
+
+  // Sounds
+  const sounds = document.querySelectorAll('.sound-picker button');
+  // Time display
+  const timeDisplay = document.querySelector('.time-display');
+  const timeSelect = document.querySelectorAll('.time-select button');
+  // Length of outline
+  const outlineLenght = outline.getTotalLength();
+  // Duration
+  let fakeDuration = 600;
+
+
+  // Animate outline
+  outline.style.strokeDasharray = outlineLenght; //Total length // 100 px between each dash
+  outline.style.strokeDashoffset = outlineLenght; // hide
+
+  // Pick sound
+  sounds.forEach(sound =>{
+    sound.addEventListener('click', function(){
+        song.src = this.getAttribute('data-sound');
+        video.src = this.getAttribute('data-video');
+        checkPlaying(song);
+    }); 
+  });
+
+  // Play sound
+  play.addEventListener('click', () => {
+    checkPlaying(song);
+  });
+
+
+  // Select sound
+  timeSelect.forEach(option =>{
+    option.addEventListener('click', function(){
+      // use function() to be able to use this
+      song.currentTime = 0; // reset time
+      fakeDuration = this.getAttribute('data-time');
+      timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${Math.floor(fakeDuration % 60)}0`;
+      // Pause everything
+      song.pause();
+      song.currentTime = 0;
+      play.src = './includes/imgs/play.svg';
+      video.pause();
+    })
+  });
+
+  // Stop and play the sounds
+  const checkPlaying = song =>{
+    if (song.paused) {
+      song.play();
+      video.play();
+      play.src = "./includes/imgs/pause.svg";
+    }
+    else {
+      song.pause();
+      video.pause();
+      play.src = "./includes/imgs/play.svg"; 
+    }
+  };
+
+  // Animate circle
+  song.ontimeupdate = () => {
+    let currentTime = song.currentTime;
+    let elapsed = fakeDuration - currentTime;
+    let seconds = Math.floor(elapsed % 60);
+    let minutes = Math.floor(elapsed / 60);
+
+    // Animate circle
+    let progress = outlineLenght - (currentTime / fakeDuration) * outlineLenght;
+    outline.style.strokeDashoffset = progress;
+
+    // Animate text
+    if(seconds == 0) { timeDisplay.textContent = `${minutes}:${seconds}0`; }
+    else { timeDisplay.textContent = `${minutes}:${seconds}`; }
+
+    if(currentTime >= fakeDuration) {
+      song.pause();
+      song.currentTime = 0;
+      play.src = './includes/imgs/play.svg';
+      video.pause();
+    }
+  }
+};
+
+app();
