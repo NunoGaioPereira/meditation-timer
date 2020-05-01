@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    <a href="/#" id="start">Start</a>
+    <a href="#/" id="start">Start</a>
 
     <div class="modal">
         <div class="header">
