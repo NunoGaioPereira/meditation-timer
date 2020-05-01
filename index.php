@@ -9,25 +9,26 @@
     <link rel="stylesheet" type="text/css" href="./css/meditation.css">
 </head>
 <body>
-    <!-- <div class="app"></div> -->
-    <h3>Meditate</h3>
-    <div class="time-picker" data-time="00:10">
-        <div class="hour">
-            <div class="hr-up"></div>
-            <input type="number" class="hr" value="00">
-            <div class="hr-down"></div>
+    <div class="app">
+        <h3>Meditate</h3>
+        <div class="time-picker" data-time="00:10">
+            <div class="hour">
+                <div class="hr-up"></div>
+                <input type="number" class="hr" value="00">
+                <div class="hr-down"></div>
+            </div>
+
+            <div class="separator">:</div>
+
+            <div class="minute">
+                <div class="min-up"></div>
+                <input type="number" class="min" value="10">
+                <div class="min-down"></div>
+            </div>
         </div>
 
-        <div class="separator">:</div>
-
-        <div class="minute">
-            <div class="min-up"></div>
-            <input type="number" class="min" value="10">
-            <div class="min-down"></div>
-        </div>
+        <a href="#/" id="start">Start</a>
     </div>
-
-    <a href="#/" id="start">Start</a>
 
     <div class="modal">
         <div class="container">
@@ -56,6 +57,23 @@
                     </g>
                 </svg>
             </div>
+
+            <div class="player-container">
+                <audio class="song">
+                  <source src="./includes/sounds/rain.mp3">
+                </audio>
+                <div class="track">
+                    <img src="./includes/imgs/play.svg" alt="play" class="play">
+                    <svg class="track-outline" width="493" height="493" viewBox="0 0 493 493" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <circle cx="246.5" cy="246.5" r="216.5" stroke-width="40"/>
+                    </svg>
+                     <svg class="moving-outline" width="493" height="493" viewBox="0 0 493 493" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <circle cx="246.5" cy="246.5" r="216.5" stroke-width="40"/>
+                    </svg>
+                </div>
+                <h3 class="time-display">10:00</h3>
+            </div>
+
         </div>
     </div>
 

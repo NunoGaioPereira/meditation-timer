@@ -12,6 +12,7 @@ const min_down = document.querySelector('.time-picker .minute .min-down');
 const start = document.getElementById('start');
 const modal = document.querySelector('.modal');
 const cross = document.querySelector('.cross');
+const app = document.querySelector('.app');
 
 
 start.addEventListener('click', openModal);
@@ -111,8 +112,10 @@ function minute_change (e) {
 
 function openModal () {
     modal.classList.toggle('open');
+    app.classList.toggle('open');
 }
 
 function closeModal () {
     modal.classList.toggle('open');
+    app.classList.toggle('open');
 }

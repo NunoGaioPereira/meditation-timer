@@ -12,10 +12,6 @@
     --dark-text: #222;
 }
 
-.app {
-    height: 100vh;
-}
-
 body {
     /* background-color: #ffce00; */
     background-color: var(--background);
@@ -36,6 +32,10 @@ h3 {
     font-size: 42px;
     text-align: center;
     margin: 30px 0;
+}
+
+.app.open {
+    display: none;
 }
 
 .time-picker {
@@ -138,7 +138,7 @@ h3 {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: coral;
+    background-color: var(--background);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s ease;
@@ -157,6 +157,7 @@ h3 {
 .modal .header {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 40px;
 }
 
 .modal .header svg {
@@ -165,3 +166,64 @@ h3 {
     pointer-events: initial;
     cursor: pointer;
 }
+
+
+.player-container {
+  height: 200px;
+  text-align: center;
+  /*padding-top:*/
+  /*flex: 1; */
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*justify-content: space-evenly;*/
+  /*align-items: center;*/
+}
+
+.player-container {
+  position: absolute; 
+  left: 50%; 
+  top: 50%; 
+  transform: translate(-50%, -50%);
+}
+
+.player-container svg {
+  position: absolute;
+  height: 220px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  pointer-events: none;
+  stroke-linecap: round;
+}
+
+.player-container .track {
+    /*position: relative;*/
+    height: 100%;
+}
+
+.player-container .track .play {
+  width: 50px;
+  cursor: pointer;
+  pointer-events: initial;
+}
+
+.player-container .track img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.player-container .time-display {
+    position: relative;
+    color: var(--light-contrast);
+}
+
+
+ .moving-outline {
+    stroke: var(--light-contrast);
+ }
+
+ .track-outline {
+    stroke: var(--dark-contrast);
+ }
