@@ -119,7 +119,7 @@ const app = () => {
     }
 
     function closeModal () {
-        checkPlaying(song);
+        stopPlaying(song);
         modal.classList.toggle('open');
         app_body.classList.toggle('open');
         play.classList.toggle('open');
@@ -147,11 +147,13 @@ const app = () => {
 
     // Pick sound
     sounds.forEach(sound =>{
-    sound.addEventListener('click', function(){
-        song.src = this.getAttribute('data-sound');
-        video.src = this.getAttribute('data-video');
-        checkPlaying(song);
-    }); 
+        sound.addEventListener('click', function(){
+            song.src = this.getAttribute('data-sound');
+            // video.src = this.getAttribute('data-video');
+
+            checkPlaying(song);
+            activateButtons();
+        }); 
     });
 
     // Play sound
@@ -176,16 +178,27 @@ const app = () => {
 
     // Stop and play the sounds
     const checkPlaying = song =>{
-    if (song.paused) {
-      song.play();
-      // video.play();
-      play.src = "./includes/imgs/pause.svg";
-    }
-    else {
-      song.pause();
-      // video.pause();
-      play.src = "./includes/imgs/play.svg"; 
-    }
+        if (song.paused) {
+          song.play();
+          // video.play();
+          play.src = "./includes/imgs/pause.svg";
+        }
+        else {
+          song.pause();
+          // video.pause();
+          play.src = "./includes/imgs/play.svg"; 
+        }
+    };
+
+    const stopPlaying = song =>{
+        if (song.paused) {
+          return;
+        }
+        else {
+          song.pause();
+          // video.pause();
+          play.src = "./includes/imgs/play.svg"; 
+        }
     };
 
     // Animate circle
