@@ -25,6 +25,12 @@
                 <input type="number" class="min" value="10">
                 <div class="min-down"></div>
             </div>
+
+        </div>
+        
+        <div class="sound-picker">
+            <button class="active" data-sound="./includes/sounds/rain.mp3" data-video="./includes/video/rain.mp4"><img src="./includes/imgs/rain.svg" alt="rain"></button>
+            <button data-sound="./includes/sounds/beach.mp3" data-video="./includes/video/beach.mp4"><img src="./includes/imgs/beach.svg" alt="beach"></button>
         </div>
 
         <a href="#/" id="start">Start</a>
