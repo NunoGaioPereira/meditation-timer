@@ -31,7 +31,7 @@
         <div class="sound-picker">
             <button class="active" data-sound="./includes/sounds/rain.mp3" data-video="./includes/video/rain.mp4"><img src="./includes/imgs/rain.svg" alt="rain"></button>
             <button data-sound="./includes/sounds/beach.mp3" data-video="./includes/video/beach.mp4"><img src="./includes/imgs/beach.svg" alt="beach"></button>
-            <button data-sound="./includes/sounds/beach.mp3" data-video="./includes/video/beach.mp4"><img src="./includes/imgs/beach.svg" alt="beach"></button>
+            <button data-sound="./includes/sounds/wind.mp3" data-video="./includes/video/wind.mp4"><img src="./includes/imgs/wind.svg" alt="wind"></button>
         </div>
 
         <a href="#/" id="start">Start</a>
