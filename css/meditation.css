@@ -4,13 +4,20 @@
     box-sizing: border-box;
 }
 
+:root {
+    --background: #f48c4d;
+    --gray: #5a6174;
+    --light-contrast: #fdf5ec;
+    --dark-contrast: #f7ab7c;
+}
+
 .app {
     height: 100vh;
 }
 
 body {
     /* background-color: #ffce00; */
-    background-color: #ffffff;
+    background-color: var(--background);
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -133,4 +140,9 @@ h3 {
     background-color: coral;
     opacity: 0;
     pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.modal.open {
+    opacity: 1;
 }

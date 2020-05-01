@@ -9,8 +9,14 @@ const hr_down = document.querySelector('.time-picker .hour .hr-down');
 const min_up = document.querySelector('.time-picker .minute .min-up');
 const min_down = document.querySelector('.time-picker .minute .min-down');
 
+const start = document.getElementById('start');
+const modal = document.querySelector('.modal');
+
+
+start.addEventListener('click', openModal);
+
 let hour = 0;
-let minute = 0;
+let minute = 10;
 
 // Event listeners
 hr_up.addEventListener('click', hour_up);
@@ -99,4 +105,8 @@ function minute_change (e) {
     }
 
     minute = e.target.value;
+}
+
+function openModal () {
+    modal.classList.toggle('open');
 }

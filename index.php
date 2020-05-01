@@ -10,8 +10,8 @@
 </head>
 <body>
     <!-- <div class="app"></div> -->
-    <h3>Meditation</h3>
-    <div class="time-picker" data-time="00:00">
+    <h3>Meditate</h3>
+    <div class="time-picker" data-time="00:10">
         <div class="hour">
             <div class="hr-up"></div>
             <input type="number" class="hr" value="00">
@@ -22,7 +22,7 @@
 
         <div class="minute">
             <div class="min-up"></div>
-            <input type="number" class="min" value="00">
+            <input type="number" class="min" value="10">
             <div class="min-down"></div>
         </div>
     </div>
