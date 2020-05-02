@@ -16,6 +16,8 @@ const app = () => {
     const cross = document.querySelector('.cross');
     const app_body = document.querySelector('.app');
 
+    const logo = document.querySelector('.logo');
+
     const mute = document.querySelector('.mute');
     const unmute = document.querySelector('.unmute');
     unmute.addEventListener('click', muteSounds);
@@ -51,15 +53,18 @@ const app = () => {
     if (isDark == 'true') { 
         body.classList.replace('light', 'dark');
         theme_check.checked = true;
+        logo.src = "./includes/imgs/logo.png";
     }
     theme_check.addEventListener('click', () => {
         if (theme_check.checked) {
             body.classList.replace('light', 'dark');
             localStorage.setItem('isDark', true);
+            logo.src = "./includes/imgs/logo.png";
         }
         else {
             body.classList.replace('dark', 'light');
             localStorage.setItem('isDark', false);
+            logo.src = "./includes/imgs/logo_pink.png";
         }
     });
 

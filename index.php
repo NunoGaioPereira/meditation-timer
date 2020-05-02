@@ -10,7 +10,7 @@
 </head>
 <body class="light">
     <div class="app">
-        <img class="logo" src="./includes/imgs/logo.png">
+        <img class="logo" src="./includes/imgs/logo_pink.png">
         <h3>Meditate</h3>
         <div class="time-picker" data-time="00:10">
             <!-- <div class="hour">
