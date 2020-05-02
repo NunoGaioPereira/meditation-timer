@@ -250,6 +250,14 @@ input:checked + .slider:before {
     background-color: var(--dark-contrast);
 }
 
+video {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  z-index: -1;
+}
+
 .modal {
     height: 100%;
     width: 100%;
@@ -262,6 +270,7 @@ input:checked + .slider:before {
     transition: opacity 0.5s ease;
     padding: 20px;
     visibility: hidden;
+    z-index: 2;
 }
 
 .modal.open {

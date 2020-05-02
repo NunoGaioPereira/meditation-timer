@@ -158,7 +158,7 @@ const app = () => {
     sounds.forEach(sound =>{
         sound.addEventListener('click', function(){
             song.src = this.getAttribute('data-sound');
-            // video.src = this.getAttribute('data-video');
+            video.src = this.getAttribute('data-video');
 
             checkPlaying(song);
             activateButtons(sound);
@@ -189,12 +189,12 @@ const app = () => {
     const checkPlaying = song =>{
         if (song.paused) {
           song.play();
-          // video.play();
+          video.play();
           play.src = "./includes/imgs/pause.svg";
         }
         else {
           song.pause();
-          // video.pause();
+          video.pause();
           play.src = "./includes/imgs/play.svg"; 
         }
     };
@@ -205,7 +205,7 @@ const app = () => {
         }
         else {
           song.pause();
-          // video.pause();
+          video.pause();
           play.src = "./includes/imgs/play.svg"; 
         }
     };
