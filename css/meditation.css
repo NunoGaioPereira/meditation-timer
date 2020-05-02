@@ -13,7 +13,6 @@
 }
 
 body {
-    /* background-color: #ffce00; */
     background-color: var(--background);
     font-family: 'Montserrat', sans-serif;
 }
@@ -55,7 +54,6 @@ h3 {
     padding: 25px 15px;
     background-color: #f3f3f3;
     border-radius: 8px;
-    /* box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); */
     color: #53565a;
     font-size: 35px;
     font-weight: 700;
@@ -156,6 +154,72 @@ h3 {
   height: 100%;
 }
 
+.settings {
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: center;
+} 
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 18px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--dark-contrast);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 0px;
+  bottom: -4px;
+  background-color: var(--gray);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+input:checked + .slider {
+  background-color: var(--light-contrast);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--light-contrast);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(25px);
+  -ms-transform: translateX(25px);
+  transform: translateX(25px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
 #start {
     margin: 50px auto 0;
     display: block;
@@ -227,12 +291,6 @@ h3 {
 .player-container {
   height: 200px;
   text-align: center;
-  /*padding-top:*/
-  /*flex: 1; */
-  /*display: flex;*/
-  /*flex-direction: column;*/
-  /*justify-content: space-evenly;*/
-  /*align-items: center;*/
 }
 
 .player-container {
@@ -253,7 +311,6 @@ h3 {
 }
 
 .player-container .track {
-    /*position: relative;*/
     height: 100%;
 }
 
@@ -279,7 +336,6 @@ h3 {
     position: relative;
     color: var(--light-contrast);
 }
-
 
  .moving-outline {
     stroke: var(--light-contrast);

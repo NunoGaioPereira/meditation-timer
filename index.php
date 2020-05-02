@@ -34,6 +34,13 @@
             <button data-sound="./includes/sounds/wind.mp3" data-video="./includes/video/wind.mp4"><img src="./includes/imgs/wind.svg" alt="wind"></button>
         </div>
 
+        <div class="settings">
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+        </div>  
+
         <a href="#/" id="start">Start</a>
     </div>
 
