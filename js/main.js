@@ -1,5 +1,5 @@
 const app = () => {
-
+    const bd = document.getElementsByTagName('body')[0];
     const time_picker_element = document.querySelector('.time-picker');
 
     const hr_element = document.querySelector('.time-picker .hour .hr');
@@ -152,7 +152,7 @@ const app = () => {
         }
         else {
             video.style.display = 'initial';   
-            // document.documentElement.style.setProperty('--light-contrast', '#fff');
+            bd.setAttribute("style", "--light-contrast: #fff; --light-gray: #ffffff61");
         }
     }
 
@@ -161,6 +161,7 @@ const app = () => {
         modal.classList.toggle('open');
         app_body.classList.toggle('open');
         play.classList.toggle('open');
+        bd.setAttribute("style", "--light-contrast: #5a6174; --light-gray: #f2f2f2");
     }
 
     const song = document.querySelector('.song');

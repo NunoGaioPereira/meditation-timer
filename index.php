@@ -112,8 +112,8 @@
     <div class="modal">
         <div class="container">
             <div class="video-container">
-                <video loop>
-                    <source src="./includes/video/rain.mp4" type="video/mp4">
+                <video loop src="./includes/video/rain.mp4"" type="video/mp4">
+                    <!-- <source src="./includes/video/rain.mp4" type="video/mp4"> -->
                 </video>
             </div>
             <div class="header">
