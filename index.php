@@ -90,7 +90,7 @@
         </div>
 
         <div class="settings">
-            <div class="setting">
+            <div class="setting video-set">
                 <span class="setting-title">Video</span>
                 <label class="switch">
                   <input type="checkbox" class="videoCheck">
