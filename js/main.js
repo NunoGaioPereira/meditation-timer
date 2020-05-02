@@ -42,16 +42,25 @@ const app = () => {
     let videoCheck = video_check.checked;
 
     // Theme toggle
+
+    // Apply cached theme on reload
     const theme_check = document.querySelector('.themeCheck');
+    const body = document.querySelector('body');
+    const isDark = localStorage.getItem('isDark');
+
+    if (isDark == 'true') { 
+        body.classList.replace('light', 'dark'); 
+        theme_check.checked = true;
+    }
     theme_check.addEventListener('click', () => {
         if (theme_check.checked) {
-            document.querySelector('body').classList.add('dark');
-            document.querySelector('body').classList.remove('light');
+            body.classList.replace('light', 'dark');
+            localStorage.setItem('isDark', true);
         }
-         else {
-            document.querySelector('body').classList.remove('dark');
-            document.querySelector('body').classList.add('light');   
-         }
+        else {
+            body.classList.replace('dark', 'light');
+            localStorage.setItem('isDark', false);
+        }
     });
 
     // Event listeners
@@ -264,6 +273,7 @@ const app = () => {
           if(matchMedia('(pointer:fine)').matches) { video.pause(); }
           var audio = new Audio('./includes/sounds/bowl.mp3');
           audio.loop = false;
+          audio.volume = 0.6;
           audio.play(); 
         }
     }
