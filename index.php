@@ -23,7 +23,7 @@
 
             <div class="minute">
                 <div class="min-up"></div>
-                <input type="number" class="min" value="10">
+                <input type="number" class="min" value="10" readonly="readonly">
                 <div class="min-down"></div>
             </div>
 
