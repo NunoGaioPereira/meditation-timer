@@ -201,7 +201,8 @@ h3 {
 .modal .header {
     display: -webkit-flex;
     display: flex;
-    /*justify-content: space-between;*/
+    height: 30px;
+    justify-content: space-between;
     /*margin-bottom: 40px;*/
 }
 
