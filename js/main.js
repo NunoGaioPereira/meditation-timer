@@ -163,6 +163,7 @@ const app = () => {
 
     function closeModal () {
         stopPlaying(song);
+        song.currentTime = 0; // reset time
         modal.classList.toggle('open');
         app_body.classList.toggle('open');
         play.classList.toggle('open');

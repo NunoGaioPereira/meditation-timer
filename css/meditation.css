@@ -368,6 +368,7 @@ video {
 .player-container .time-display {
     position: relative;
     color: var(--light-contrast);
+    margin-top: 30px;
 }
 
  .moving-outline {
