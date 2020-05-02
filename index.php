@@ -22,9 +22,9 @@
             <!-- <div class="separator">:</div> -->
 
             <div class="minute">
-                <div class="min-up"></div>
+                <div class="min-down">-</div>
                 <input type="number" class="min" value="10" readonly="readonly">
-                <div class="min-down"></div>
+                <div class="min-up">+</div>
             </div>
 
         </div>

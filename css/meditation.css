@@ -71,10 +71,11 @@ h3 {
 
 .time-picker .minute {
     position: relative;
-    min-width: 60px;
+    /*min-width: 60px;*/
     padding: 8px 0;
     text-align: center;
     display: flex;
+    justify-content: space-between;
     flex-direction: row;
 }
 
@@ -86,38 +87,48 @@ h3 {
     border: none;
     outline: none;
     display: block;
-    width: 100%;
+    width: 100px;
+    height: 40px;
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .time-picker .minute .min-up,
 .time-picker .minute .min-down {
-    position: absolute;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.15s ease-in-out;
+    /*position: absolute;
     left: 50%;
     transform: translateX(-50%);
     width: 40px;
     height: 20px;
     border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    cursor: pointer;
-    transition: border-color 0.15s ease-in-out;
+    border-right: 20px solid transparent;*/
+    /*cursor: pointer;
+    transition: border-color 0.15s ease-in-out;*/
 }
 
 .time-picker .minute .min-up {
-    top: -10px;
-    border-bottom: 20px solid var(--dark-contrast);
+    /*top: -10px;*/
+    /*border-bottom: 20px solid var(--dark-contrast);*/
 }
 
 .time-picker .minute .min-down {
-    bottom: -10px;
-    border-top: 20px solid var(--dark-contrast);
+    /*bottom: -10px;*/
+    /*border-top: 20px solid var(--dark-contrast);*/
 }
 
 .time-picker .minute .min-up:hover,
 .time-picker .minute .min-down:hover {
-    border-bottom-color: var(--light-contrast);
-    border-top-color: var(--light-contrast);
+    /*border-bottom-color: var(--light-contrast);*/
+    /*border-top-color: var(--light-contrast);*/
+    background-color: var(--light-gray);
 }
 
 .sound-picker {
