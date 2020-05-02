@@ -41,6 +41,10 @@ const app = () => {
     const video_check = document.querySelector('.videoCheck');
     let videoCheck = video_check.checked;
 
+    var newVideo = document.createElement('video');
+    newVideo.setAttribute('loop', 'loop');
+    newVideo.setAttribute('preload', 'auto');
+
     // Theme toggle
     const theme_check = document.querySelector('.themeCheck');
     theme_check.addEventListener('click', () => {
@@ -151,7 +155,7 @@ const app = () => {
             video.style.display = 'none';
         }
         else {
-            video.style.display = 'initial';   
+            video.style.display = 'initial';
             bd.setAttribute("style", "--light-contrast: #fff; --light-gray: #ffffff61");
         }
     }
@@ -221,7 +225,10 @@ const app = () => {
         if (song.paused) {
           song.play();
           video.play();
-          play.src = "./includes/imgs/pause.svg";
+          if(matchMedia('(pointer:fine)').matches)
+          {
+            play.src = "./includes/imgs/pause.svg";
+          }
         }
         else {
           song.pause();
