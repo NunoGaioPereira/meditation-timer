@@ -5,7 +5,7 @@
 }
 
 :root {
-    --background: red;
+    --background: #f48c4d;
     --gray: #5a6174;
     --light-contrast: #fdf5ec;
     --dark-contrast: #f7ab7c;
@@ -199,9 +199,9 @@ h3 {
 }
 
 .modal .header {
-    /*display: flex;
+    display: flex;
     justify-content: space-between;
-    margin-bottom: 40px;*/
+    /*margin-bottom: 40px;*/
 }
 
 .modal .header svg {
