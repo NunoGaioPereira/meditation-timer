@@ -42,12 +42,19 @@
                   <span class="slider round"></span>
                 </label>
             </div>
+            <div class="setting">
+                <span class="setting-title">Dark theme</span>
+                <label class="switch">
+                  <input type="checkbox">
+                  <span class="slider round"></span>
+                </label>
+            </div>
         </div>  
 
         <a href="#/" id="start">Start</a>
     </div>
 
-    <div class="modal">
+    <div class="modal open">
         <div class="container">
             <div class="header">
                 <svg version="1.1" class="unmute" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -107,6 +114,6 @@
         </div>
     </div>
 
-    <script src="./js/main.js"></script>
+    <!-- <script src="./js/main.js"></script> -->
 </body>
 </html>
