@@ -150,8 +150,8 @@ const app = () => {
 
 
     // Animate outline
-    outline.style.strokeDasharray = outlineLenght; //Total length // 100 px between each dash
-    outline.style.strokeDashoffset = outlineLenght; // hide
+    outline.style.strokeDasharray = outlineLenght + "px"; //Total length // 100 px between each dash
+    outline.style.strokeDashoffset = outlineLenght + "px"; // hide
 
     // Pick sound
     sounds.forEach(sound =>{
@@ -218,7 +218,7 @@ const app = () => {
 
         // Animate circle
         let progress = outlineLenght - (currentTime / fakeDuration) * outlineLenght;
-        outline.style.strokeDashoffset = progress;
+        outline.style.strokeDashoffset = progress + "px";
 
         // Animate text
         if(seconds == 0) { timeDisplay.textContent = `${minutes}:${seconds}0`; }

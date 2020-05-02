@@ -35,10 +35,13 @@
         </div>
 
         <div class="settings">
-            <label class="switch">
-              <input type="checkbox">
-              <span class="slider round"></span>
-            </label>
+            <div class="setting">
+                <span class="setting-title">Video</span>
+                <label class="switch">
+                  <input type="checkbox">
+                  <span class="slider round"></span>
+                </label>
+            </div>
         </div>  
 
         <a href="#/" id="start">Start</a>
