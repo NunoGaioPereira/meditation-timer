@@ -112,8 +112,8 @@
     <div class="modal">
         <div class="container">
             <div class="video-container">
-                <video loop src="./includes/video/rain.mp4"" type="video/mp4">
-                    <!-- <source src="./includes/video/rain.mp4" type="video/mp4"> -->
+                <video loop preload="auto">
+                    <source src="./includes/video/rain.mp4" type="video/mp4">
                 </video>
             </div>
             <div class="header">
@@ -156,7 +156,7 @@
             </div>
 
             <div class="player-container">
-                <audio class="song">
+                <audio class="song" preload="auto">
                   <source src="./includes/sounds/rain.mp3">
                 </audio>
                 <div class="track">
