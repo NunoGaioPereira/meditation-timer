@@ -169,7 +169,14 @@ const app = () => {
     const outline = document.querySelector('.moving-outline circle');
     const video = document.querySelector('.video-container video');
     const video_container = document.querySelector('.video-container');
-    if(matchMedia('(pointer:coarse)').matches) { video_container.removeChild(video); }
+    // if(matchMedia('(pointer:coarse)').matches) { 
+    //     console.log("yes");
+    //     video_container.removeChild(video); 
+    // }
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        window.alert("yes");
+        video_container.removeChild(video); 
+    }
 
     // Sounds
     const sounds = document.querySelectorAll('.sound-picker button');
@@ -225,8 +232,8 @@ const app = () => {
         }
         else {
           song.pause();
-          if(matchMedia('(pointer:fine)').matches) { video.pause(); }
           play.src = "./includes/imgs/play.svg"; 
+          if(matchMedia('(pointer:fine)').matches) { video.pause(); }
         }
     };
 
@@ -236,8 +243,8 @@ const app = () => {
         }
         else {
           song.pause();
-          if(matchMedia('(pointer:fine)').matches) { video.pause(); }
           play.src = "./includes/imgs/play.svg"; 
+          if(matchMedia('(pointer:fine)').matches) { video.pause(); }
         }
     };
 
