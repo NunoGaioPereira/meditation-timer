@@ -290,9 +290,9 @@ video {
   top: 0%;
   left: 0%;
   min-width: 100%; 
-  min-height: 10%; 
+  min-height: 100%; 
   width: auto;
-  height: 10px;
+  height: auto;
   z-index: -1;
 }
 
