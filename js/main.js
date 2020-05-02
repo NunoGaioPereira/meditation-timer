@@ -152,6 +152,7 @@ const app = () => {
         }
         else {
             video.style.display = 'initial';   
+            video.webkitExitFullscreen()
             bd.setAttribute("style", "--light-contrast: #fff; --light-gray: #ffffff61");
         }
     }
