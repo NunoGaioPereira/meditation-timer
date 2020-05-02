@@ -2,11 +2,11 @@ const app = () => {
     const bd = document.getElementsByTagName('body')[0];
     const time_picker_element = document.querySelector('.time-picker');
 
-    const hr_element = document.querySelector('.time-picker .hour .hr');
-    const min_element = document.querySelector('.time-picker .minute .min');
+    // var hr_element = document.querySelector('.time-picker .hour .hr');
+    var min_element = document.querySelector('.time-picker .minute .min');
 
-    const hr_up = document.querySelector('.time-picker .hour .hr-up');
-    const hr_down = document.querySelector('.time-picker .hour .hr-down');
+    // const hr_up = document.querySelector('.time-picker .hour .hr-up');
+    // const hr_down = document.querySelector('.time-picker .hour .hr-down');
 
     const min_up = document.querySelector('.time-picker .minute .min-up');
     const min_down = document.querySelector('.time-picker .minute .min-down');
@@ -45,11 +45,11 @@ const app = () => {
 
     // Apply cached theme on reload
     const theme_check = document.querySelector('.themeCheck');
-    const body = document.querySelector('body');
+    const body = document.body;
     const isDark = localStorage.getItem('isDark');
 
     if (isDark == 'true') { 
-        body.classList.replace('light', 'dark'); 
+        body.classList.replace('light', 'dark');
         theme_check.checked = true;
     }
     theme_check.addEventListener('click', () => {
@@ -64,55 +64,49 @@ const app = () => {
     });
 
     // Event listeners
-    hr_up.addEventListener('click', hour_up);
-    hr_down.addEventListener('click', hour_down);
+    // hr_up.addEventListener('click', hour_up);
+    // hr_down.addEventListener('click', hour_down);
 
     min_up.addEventListener('click', minute_up);
     min_down.addEventListener('click', minute_down);
 
-    hr_element.addEventListener('change', hour_change);
+    // hr_element.addEventListener('change', hour_change);
     min_element.addEventListener('change', minute_change);
 
-    function hour_up () {
-        hour++;
-        if (hour > 23) {
-            hour = 0;
-        }
-        setTime();
-    }
+    // function hour_up () {
+    //     hour++;
+    //     if (hour > 23) {
+    //         hour = 0;
+    //     }
+    //     setTime();
+    // }
 
-    function hour_down () {
-        hour--;
-        if (hour < 0) {
-            hour = 0;
-        }
-        setTime();
-    }
+    // function hour_down () {
+    //     hour--;
+    //     if (hour < 0) {
+    //         hour = 0;
+    //     }
+    //     setTime();
+    // }
 
     function minute_up () {
-        minute++;
-        if (minute > 59) {
-            minute = 0;
-            hour_up();
-        }
+        if (minute >= 60) { }
+        else if (minute < 5) { minute++; }
+        else { minute+=5; }
         setTime();
     }
 
     function minute_down () {
-        if (minute == 0) {
-            minute = 0;
-            // hour--;
-        }
-        else {
-            minute--;
-        }
+        if (minute <= 5 && minute != 1) { minute--; }
+        else if(minute == 1) {}
+        else { minute-=5; }
         setTime();
     }
 
     function setTime() {
-        hr_element.value = formatTime(hour);
         min_element.value = formatTime(minute);
-        time_picker_element.dataset.time = formatTime(hour) + ':' + formatTime(minute);
+        // time_picker_element.dataset.time = formatTime(hour) + ':' + formatTime(minute);
+        time_picker_element.dataset.time = '00:' + formatTime(minute);
     }
 
     function formatTime(time) {
@@ -122,24 +116,24 @@ const app = () => {
         return time;
     }
 
-    function hour_change (e) {
-        if (e.target.value > 23) {
-            e.target.value = 23;
-        }
-        else if (e.target.value < 0) {
-            e.target.value = '00';
-        }
+    // function hour_change (e) {
+    //     if (e.target.value > 23) {
+    //         e.target.value = 23;
+    //     }
+    //     else if (e.target.value < 0) {
+    //         e.target.value = '00';
+    //     }
 
-        if (e.target.value == "") {
-            e.target.value = formatTime(hour);
-        }
+    //     if (e.target.value == "") {
+    //         e.target.value = formatTime(hour);
+    //     }
 
-        hour = e.target.value;
-    }
+    //     hour = e.target.value;
+    // }
 
     function minute_change (e) {
-        if (e.target.value > 59) {
-            e.target.value = 59;
+        if (e.target.value > 60) {
+            e.target.value = 60;
         }
         else if (e.target.value < 0) {
             e.target.value = '00';
@@ -153,6 +147,8 @@ const app = () => {
     }
 
     function openModal () {
+        fakeDuration = min_element.value * 60;
+        timeDisplay.textContent = `${fakeDuration/60}:00`;
         modal.classList.toggle('open');
         app_body.classList.toggle('open');
         play.classList.toggle('open');
@@ -189,8 +185,8 @@ const app = () => {
     // Length of outline
     // const outlineLenght = outline.getTotalLength();
     const outlineLenght = '1359.76';
-    // Duration
-    let fakeDuration = 600;
+        // Duration
+    let fakeDuration = min_element.value;
 
 
     // Animate outline
@@ -216,11 +212,11 @@ const app = () => {
         option.addEventListener('click', function(){
           // use function() to be able to use this
           song.currentTime = 0; // reset time
-          fakeDuration = this.getAttribute('data-time');
-          timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${Math.floor(fakeDuration % 60)}0`;
+          // fakeDuration = this.getAttribute('data-time');
+          // timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${Math.floor(fakeDuration % 60)}0`;
           // Pause everything
-          song.pause();
-          song.currentTime = 0;
+          // song.pause();
+          // song.currentTime = 0;
           play.src = './includes/imgs/play.svg';
           if(matchMedia('(pointer:fine)').matches) { video.pause(); }
         })

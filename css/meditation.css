@@ -4,25 +4,8 @@
     box-sizing: border-box;
 }
 
-:root {
-    /*--background: #fff;
-    --light-gray: #f2f2f2;
-    --light-contrast: #5a6174;
-    --dark-contrast: #9298aa;
-    --dark-text: #222;*/
-
-    /*
-    --background: #22292f;
-    --gray: #5a6174;
-    --light-contrast: #fdf5ec;
-    --dark-contrast: #f7ab7c;
-    --dark-text: #222;
-    */
-}
-
 .light {
     --background: #fff;
-    --gray: #5a6174;
     --light-gray: #f2f2f2;
     --light-contrast: #5a6174;
     --dark-contrast: #9298aa;
@@ -70,30 +53,21 @@ h3 {
 }
 
 .time-picker {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
     max-width: 200px;
     margin: 0 auto;
-    padding: 25px 15px;
-    background-color: #f3f3f3;
-    border-radius: 8px;
     color: #53565a;
     font-size: 35px;
     font-weight: 700;
     user-select: none;
 }
 
-.time-picker .hour,
 .time-picker .minute {
     position: relative;
     min-width: 60px;
     padding: 8px 0;
     text-align: center;
     display: flex;
-    align-items: stretch;
-    justify-content: stretch;
+    flex-direction: row;
 }
 
 .time-picker .hour .hr,
@@ -109,8 +83,6 @@ h3 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.time-picker .hour .hr-up,
-.time-picker .hour .hr-down,
 .time-picker .minute .min-up,
 .time-picker .minute .min-down {
     position: absolute;
@@ -124,13 +96,11 @@ h3 {
     transition: border-color 0.15s ease-in-out;
 }
 
-.time-picker .hour .hr-up,
 .time-picker .minute .min-up {
     top: -10px;
     border-bottom: 20px solid #aaa;
 }
 
-.time-picker .hour .hr-down,
 .time-picker .minute .min-down {
     bottom: -10px;
     border-top: 20px solid #aaa;

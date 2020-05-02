@@ -12,13 +12,13 @@
     <div class="app">
         <h3>Meditate</h3>
         <div class="time-picker" data-time="00:10">
-            <div class="hour">
+            <!-- <div class="hour">
                 <div class="hr-up"></div>
                 <input type="number" class="hr" value="00">
                 <div class="hr-down"></div>
-            </div>
+            </div> -->
 
-            <div class="separator">:</div>
+            <!-- <div class="separator">:</div> -->
 
             <div class="minute">
                 <div class="min-up"></div>
