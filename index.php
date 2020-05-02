@@ -112,7 +112,7 @@
     <div class="modal">
         <div class="container">
             <div class="video-container">
-                <video loop preload="none">
+                <video loop preload="auto">
                     <source src="./includes/video/rain.mp4" type="video/mp4">
                 </video>
             </div>
