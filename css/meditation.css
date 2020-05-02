@@ -5,12 +5,11 @@
 }
 
 :root {
-    --background: #fff;
-    --gray: #5a6174;
+    /*--background: #fff;
     --light-gray: #f2f2f2;
     --light-contrast: #5a6174;
     --dark-contrast: #9298aa;
-    --dark-text: #222;
+    --dark-text: #222;*/
 
     /*
     --background: #22292f;
@@ -21,8 +20,24 @@
     */
 }
 
+.light {
+    --background: #fff;
+    --gray: #5a6174;
+    --light-gray: #f2f2f2;
+    --light-contrast: #5a6174;
+    --dark-contrast: #9298aa;
+}
+
+.dark {
+    --background: #22292f;
+    --light-gray: #9298aa;
+    --light-contrast: #5a6174;
+    --dark-contrast: #9298aa;
+}
+
 body {
     background-color: var(--background);
+    transition: background-color 0.4s ease-in-out;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -166,11 +181,13 @@ h3 {
 
 .sound-picker button:nth-child(1) svg, .sound-picker button:nth-child(3) svg {
     fill: var(--background);
+    transition: fill 0.4s ease-in-out;
 }
 
 .sound-picker button:nth-child(2) svg {
     stroke: var(--background);
     stroke-width: 2px; 
+    transition: stroke 0.4s ease-in-out;
 }
 
 .settings {
@@ -210,7 +227,7 @@ h3 {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--dark-contrast);
+  background-color: var(--light-gray);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -222,7 +239,7 @@ h3 {
   width: 20px;
   left: 0px;
   bottom: -3px;
-  background-color: var(--gray);
+  background-color: var(--dark-contrast);
   -webkit-transition: .3s;
   transition: .3s;
 }
@@ -261,7 +278,7 @@ input:checked + .slider:before {
     text-decoration: none;
     padding: 12px;
     font-weight: 600;
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.4s ease-in-out;;
 }
 
 #start:hover {
@@ -380,7 +397,7 @@ video {
 }
 
  .moving-outline {
-    stroke: var(--dark-contrast);
+    stroke: var(--light-contrast);
  }
 
  .track-outline {

@@ -8,7 +8,7 @@
     <title>Meditation timer</title>
     <link rel="stylesheet" type="text/css" href="./css/meditation.css">
 </head>
-<body>
+<body class="light">
     <div class="app">
         <h3>Meditate</h3>
         <div class="time-picker" data-time="00:10">
@@ -100,7 +100,7 @@
             <div class="setting">
                 <span class="setting-title">Dark theme</span>
                 <label class="switch">
-                  <input type="checkbox">
+                  <input type="checkbox" class="themeCheck">
                   <span class="slider round"></span>
                 </label>
             </div>

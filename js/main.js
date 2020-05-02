@@ -37,11 +37,21 @@ const app = () => {
     let hour = 0;
     let minute = 10;
 
+    // Video toggle
     const video_check = document.querySelector('.videoCheck');
     let videoCheck = video_check.checked;
-    video_check.addEventListener('click', () => {
-        videoCheck = video_check.checked;
-        console.log(videoCheck);
+
+    // Theme toggle
+    const theme_check = document.querySelector('.themeCheck');
+    theme_check.addEventListener('click', () => {
+        if (theme_check.checked) {
+            document.querySelector('body').classList.add('dark');
+            document.querySelector('body').classList.remove('light');
+        }
+         else {
+            document.querySelector('body').classList.remove('dark');
+            document.querySelector('body').classList.add('light');   
+         }
     });
 
     // Event listeners
@@ -142,6 +152,7 @@ const app = () => {
         }
         else {
             video.style.display = 'initial';   
+            // document.documentElement.style.setProperty('--light-contrast', '#fff');
         }
     }
 
