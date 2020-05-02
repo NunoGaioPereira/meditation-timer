@@ -210,6 +210,17 @@ h3 {
     cursor: pointer;
 }
 
+.modal .header .unmute.unactive {
+    display: none;
+}
+
+.modal .header .mute {
+    display: none;
+}
+
+.modal .header .mute.active {
+    display: block;
+}
 
 .player-container {
   height: 200px;
@@ -248,6 +259,7 @@ h3 {
   width: 50px;
   cursor: pointer;
   pointer-events: none;
+  user-select: none;
 }
 
 .player-container .track .play.open {

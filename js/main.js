@@ -16,6 +16,14 @@ const app = () => {
     const cross = document.querySelector('.cross');
     const app_body = document.querySelector('.app');
 
+    const mute = document.querySelector('.mute');
+    const unmute = document.querySelector('.unmute');
+    unmute.addEventListener('click', muteSounds);
+    mute.addEventListener('click', muteSounds);
+    function muteSounds () {
+        mute.classList.toggle('active');
+        unmute.classList.toggle('unactive');
+    }
 
     start.addEventListener('click', openModal);
     cross.addEventListener('click', closeModal);
