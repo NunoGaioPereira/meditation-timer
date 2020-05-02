@@ -40,7 +40,7 @@
     <div class="modal">
         <div class="container">
             <div class="header">
-                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                <svg version="1.1" class="unmute" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                      viewBox="0 0 50 50" xml:space="preserve">
                     <g>
                         <path class="st0" d="M27.6,44.2c-1.9-1-7.2-4.2-14.7-9.1l-2.7-1.8H6.4H2.5l-0.5-0.4c-0.2-0.1-0.6-0.5-0.8-0.7L1,31.8V25v-6.8

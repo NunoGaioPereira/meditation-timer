@@ -34,8 +34,15 @@ h3 {
     margin: 30px 0;
 }
 
+.app {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
 .app.open {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
 }
 
 .time-picker {
@@ -177,10 +184,12 @@ h3 {
     pointer-events: none;
     transition: opacity 0.5s ease;
     padding: 20px;
+    visibility: hidden;
 }
 
 .modal.open {
     opacity: 1;
+    visibility: visible;
 }
 
 .modal .container {
