@@ -38,7 +38,7 @@
             <div class="setting">
                 <span class="setting-title">Video</span>
                 <label class="switch">
-                  <input type="checkbox">
+                  <input type="checkbox" class="videoCheck">
                   <span class="slider round"></span>
                 </label>
             </div>

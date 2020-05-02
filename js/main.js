@@ -31,6 +31,13 @@ const app = () => {
     let hour = 0;
     let minute = 10;
 
+    const video_check = document.querySelector('.videoCheck');
+    let videoCheck = video_check.checked;
+    video_check.addEventListener('click', () => {
+        videoCheck = video_check.checked;
+        console.log(videoCheck);
+    });
+
     // Event listeners
     hr_up.addEventListener('click', hour_up);
     hr_down.addEventListener('click', hour_down);
@@ -124,6 +131,12 @@ const app = () => {
         modal.classList.toggle('open');
         app_body.classList.toggle('open');
         play.classList.toggle('open');
+        if(!video_check.checked) {
+            video.style.display = 'none';
+        }
+        else {
+            video.style.display = 'initial';   
+        }
     }
 
     function closeModal () {
