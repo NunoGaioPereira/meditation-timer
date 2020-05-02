@@ -144,7 +144,8 @@ const app = () => {
     const timeDisplay = document.querySelector('.time-display');
     const timeSelect = document.querySelectorAll('.time-select button');
     // Length of outline
-    const outlineLenght = outline.getTotalLength();
+    // const outlineLenght = outline.getTotalLength();
+    const outlineLenght = '1359.76';
     // Duration
     let fakeDuration = 600;
 

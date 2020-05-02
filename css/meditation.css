@@ -351,8 +351,6 @@ input:checked + .slider:before {
 
  .moving-outline {
     stroke: var(--light-contrast);
-    stroke-dasharray: 110px;
-    stroke-dashoffset: 100px;
  }
 
  .track-outline {

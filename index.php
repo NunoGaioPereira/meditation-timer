@@ -101,10 +101,10 @@
                 </audio>
                 <div class="track">
                     <img src="./includes/imgs/play.svg" alt="play" class="play">
-                    <svg version="2.0" class="track-outline" width="493" height="493" viewBox="0 0 493 493" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="track-outline" width="493" height="493" viewBox="0 0 493 493" fill="none" xmlns="http://www.w3.org/2000/svg">
                      <circle cx="246.5" cy="246.5" r="216.5" stroke-width="40"/>
                     </svg>
-                     <svg version="2.0" class="moving-outline" width="493" height="493" viewBox="0 0 493 493" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <svg class="moving-outline" width="493" height="493" viewBox="0 0 493 493" fill="none" xmlns="http://www.w3.org/2000/svg">
                      <circle cx="246.5" cy="246.5" r="216.5" stroke-width="40"/>
                     </svg>
                 </div>
