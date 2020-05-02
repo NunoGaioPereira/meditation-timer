@@ -179,7 +179,7 @@ const app = () => {
             song.src = this.getAttribute('data-sound');
             video.src = this.getAttribute('data-video');
 
-            checkPlaying(song);
+            // checkPlaying(song);
             activateButtons(sound);
         }); 
     });
