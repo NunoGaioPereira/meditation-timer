@@ -254,7 +254,7 @@ input:checked + .slider:before {
     margin: 50px auto 0;
     display: block;
     border-radius: 1.5em;
-    color: var(--gray);
+    color: var(--background);
     background-color: var(--light-contrast);
     width: 220px;
     text-align: center;
@@ -380,9 +380,10 @@ video {
 }
 
  .moving-outline {
-    stroke: var(--light-contrast);
+    stroke: var(--dark-contrast);
  }
 
  .track-outline {
-    stroke: #ffffff61;
+    /*stroke: #ffffff61;*/
+    stroke: var(--light-gray);
  }
