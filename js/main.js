@@ -262,6 +262,9 @@ const app = () => {
           song.currentTime = 0;
           play.src = './includes/imgs/play.svg';
           if(matchMedia('(pointer:fine)').matches) { video.pause(); }
+          var audio = new Audio('./includes/sounds/bowl.mp3');
+          audio.loop = false;
+          audio.play(); 
         }
     }
 
