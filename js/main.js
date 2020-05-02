@@ -23,6 +23,12 @@ const app = () => {
     function muteSounds () {
         mute.classList.toggle('active');
         unmute.classList.toggle('unactive');
+        if(song.muted == true){
+            song.muted = false;
+        }
+        else {
+            song.muted = true;
+        }
     }
 
     start.addEventListener('click', openModal);
