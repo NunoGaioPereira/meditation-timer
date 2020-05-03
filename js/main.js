@@ -11,6 +11,7 @@ const app = () => {
     const min_up = document.querySelector('.time-picker .minute .min-up');
     const min_down = document.querySelector('.time-picker .minute .min-down');
     const endAudio = new Audio();
+    endAudio.src = './includes/sounds/silence.mp3';
     endAudio.play();
 
     const start = document.getElementById('start');
