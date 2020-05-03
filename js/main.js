@@ -10,6 +10,8 @@ const app = () => {
 
     const min_up = document.querySelector('.time-picker .minute .min-up');
     const min_down = document.querySelector('.time-picker .minute .min-down');
+    const endAudio = new Audio();
+    endAudio.play();
 
     const start = document.getElementById('start');
     const modal = document.querySelector('.modal');
@@ -324,7 +326,8 @@ const app = () => {
               song.currentTime = 0;
               play.src = './includes/imgs/play.svg';
               if(matchMedia('(pointer:fine)').matches) { video.pause(); }
-              var endAudio = new Audio('./includes/sounds/bowl.mp3');
+              // var endAudio = new Audio('./includes/sounds/bowl.mp3');
+              endAudio.src = './includes/sounds/bowl.mp3';
               endAudio.loop = false;
               endAudio.volume = 0.5;
               endAudio.play(); 
