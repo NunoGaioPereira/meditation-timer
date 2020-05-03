@@ -143,7 +143,6 @@ const app = () => {
         else if (e.target.value < 0) {
             e.target.value = '00';
         }
-
         if (e.target.value == "") {
             e.target.value = formatTime(minute);
         }
@@ -266,6 +265,7 @@ const app = () => {
 
         // Animate text
         if(seconds == 0) { timeDisplay.textContent = `${minutes}:${seconds}0`; }
+        else if(seconds < 10) { timeDisplay.textContent = `${minutes}:0${seconds}`; }
         else { timeDisplay.textContent = `${minutes}:${seconds}`; }
 
         if(currentTime >= fakeDuration) {
@@ -275,7 +275,7 @@ const app = () => {
           if(matchMedia('(pointer:fine)').matches) { video.pause(); }
           var audio = new Audio('./includes/sounds/bowl.mp3');
           audio.loop = false;
-          audio.volume = 0.6;
+          audio.volume = 0.5;
           audio.play(); 
         }
     }
