@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
     <title>Meditation timer</title>
     <link rel="stylesheet" type="text/css" href="./css/meditation.css">
+    <link rel="shortcut icon" type="image/png" href="includes/imgs/favicon.png"/>
 </head>
 <body class="light">
     <div class="app">
