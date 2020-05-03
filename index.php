@@ -14,7 +14,7 @@
     <div class="app">
         <div class="info">
             <img class="logo" src="./includes/imgs/logo_pink.png">
-            <h3>Meditate</h3>
+            <h3 class="noselect">Meditate</h3>
         </div>
         <div class="main">
             <div class="time-picker" data-time="00:10">
@@ -27,9 +27,9 @@
                 <!-- <div class="separator">:</div> -->
 
                 <div class="minute">
-                    <div class="min-down">-</div>
-                    <input type="number" class="min" value="10" readonly="readonly">
-                    <div class="min-up">+</div>
+                    <div class="min-down noselect">-</div>
+                    <input type="number" class="min noselect" value="10" readonly="disabled">
+                    <div class="min-up noselect">+</div>
                 </div>
 
             </div>
