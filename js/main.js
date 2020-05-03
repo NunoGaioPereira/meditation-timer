@@ -166,6 +166,7 @@ const app = () => {
         now = Date.now();
         end = now + sessionLength * 1000;
         secondsLeft = sessionLength;
+        outline.style.strokeDashoffset = "1360px";
         // console.log(now)
         // console.log(end)
 
@@ -192,6 +193,7 @@ const app = () => {
         modal.classList.toggle('open');
         app_body.classList.toggle('open');
         play.classList.toggle('open');
+        outline.style.strokeDashoffset = "1360px";
         if (localStorage.getItem('isDark') == 'true') { 
             bd.setAttribute("style", "--light-contrast: #5a6174; --track-outline: #9298aa"); 
         }
@@ -326,7 +328,7 @@ const app = () => {
               endAudio.loop = false;
               endAudio.volume = 0.5;
               endAudio.play(); 
-              outline.style.strokeDashoffset = outlineLenght + "px";
+              outline.style.strokeDashoffset = "1360px";
               stopper = true;
               closeModal();
             }
