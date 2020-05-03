@@ -328,6 +328,7 @@ const app = () => {
               endAudio.play(); 
               outline.style.strokeDashoffset = outlineLenght + "px";
               stopper = true;
+              closeModal();
             }
             song.onended = function() {
                 if(secondsLeft > 0  && stopper == false) {
