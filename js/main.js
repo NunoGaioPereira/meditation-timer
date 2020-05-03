@@ -163,6 +163,10 @@ const app = () => {
             if(matchMedia('(pointer:fine)').matches) { video.style.display = 'initial'; }
             bd.setAttribute("style", "--light-contrast: #fff; --light-gray: #ffffff61");
         }
+
+        song.play();
+        play.src = "./includes/imgs/pause.svg";
+        if(matchMedia('(pointer:fine)').matches) { video.play(); }
     }
 
     function closeModal () {
