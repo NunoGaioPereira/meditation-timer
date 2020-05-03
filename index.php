@@ -34,7 +34,7 @@
 
             <div class="sound-picker">
                 <button class="active" data-sound="./includes/sounds/rain.mp3" data-video="./includes/video/rain.mp4">
-                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 50 50" xml:space="preserve">
                         <g>
                             <path class="st0" d="M7.2,48.6c-0.3-0.1-0.4-0.4-0.4-0.5c0-0.3,6.8-17.6,7-17.9c0.1,0,0.4-0.1,0.7-0.1c0.3-0.1,0.4,0,0.7,0.3
@@ -75,7 +75,7 @@
                     </svg>
                 </button>
                 <button data-sound="./includes/sounds/wind.mp3" data-video="./includes/video/wind.mp4">
-                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 50 50" xml:space="preserve">
                         <g>
                             <path class="st0" d="M40.5,48.8c-1.5-0.3-3-1.3-4-2.3c-0.8-1.2-1.5-3-1.5-4.3c0-0.5,0-0.7,0.2-0.8c0.7-0.7,1.7-0.2,1.7,0.7
