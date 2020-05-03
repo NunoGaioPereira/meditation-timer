@@ -8,6 +8,7 @@
     <title>Meditation timer</title>
     <link rel="stylesheet" type="text/css" href="./css/meditation.css">
     <link rel="shortcut icon" type="image/png" href="includes/imgs/favicon.png"/>
+    <link rel="apple-touch-icon" href="includes/imgs/apple-touch-icon.png">
 </head>
 <body class="light">
     <div class="app">
