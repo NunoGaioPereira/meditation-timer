@@ -53,17 +53,20 @@ const app = () => {
     if (isDark == 'true') { 
         body.classList.replace('light', 'dark');
         theme_check.checked = true;
+        // bd.setAttribute("style", "--track-outline: #9298aa");
         logo.src = "./includes/imgs/logo.png";
     }
     theme_check.addEventListener('click', () => {
         if (theme_check.checked) {
             body.classList.replace('light', 'dark');
             localStorage.setItem('isDark', true);
+            bd.setAttribute("style", "--track-outline: #9298aa");
             logo.src = "./includes/imgs/logo.png";
         }
         else {
             body.classList.replace('dark', 'light');
             localStorage.setItem('isDark', false);
+            bd.setAttribute("style", "--track-outline: #f2f2f2");
             logo.src = "./includes/imgs/logo_pink.png";
         }
     });
@@ -146,7 +149,6 @@ const app = () => {
         if (e.target.value == "") {
             e.target.value = formatTime(minute);
         }
-
         minute = e.target.value;
     }
 
@@ -161,7 +163,7 @@ const app = () => {
         }
         else {
             if(matchMedia('(pointer:fine)').matches) { video.style.display = 'initial'; }
-            bd.setAttribute("style", "--light-contrast: #fff; --light-gray: #ffffff61");
+            bd.setAttribute("style", "--light-contrast: #fff; --track-outline: #ffffff25");
         }
 
         song.play();
@@ -175,7 +177,12 @@ const app = () => {
         modal.classList.toggle('open');
         app_body.classList.toggle('open');
         play.classList.toggle('open');
-        bd.setAttribute("style", "--light-contrast: #5a6174; --light-gray: #f2f2f2");
+        if (localStorage.getItem('isDark') == 'true') { 
+            bd.setAttribute("style", "--light-contrast: #5a6174; --track-outline: #9298aa"); 
+        }
+        else { 
+            bd.setAttribute("style", "--light-contrast: #5a6174; --track-outline: #f2f2f2"); 
+        }
     }
 
     const song = document.querySelector('.song');
@@ -246,9 +253,7 @@ const app = () => {
     };
 
     const stopPlaying = song =>{
-        if (song.paused) {
-          return;
-        }
+        if (song.paused) { }
         else {
           song.pause();
           play.src = "./includes/imgs/play.svg"; 

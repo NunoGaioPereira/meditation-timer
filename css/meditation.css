@@ -7,13 +7,16 @@
 .light {
     --background: #fff;
     --light-gray: #f2f2f2;
+    --track-outline: #f2f2f2;
     --light-contrast: #5a6174;
     --dark-contrast: #9298aa;
 }
 
 .dark {
     --background: #22292f;
-    --light-gray: #9298aa;
+    /*--light-gray: #9298aa;*/
+    --track-outline: #9298aa;
+    --light-gray: #c6cfeb;
     --light-contrast: #5a6174;
     --dark-contrast: #9298aa;
 }
@@ -408,7 +411,7 @@ video {
 
  .track-outline {
     /*stroke: #ffffff61;*/
-    stroke: var(--light-gray);
+    stroke: var(--track-outline);
  }
 
 @media (pointer: coarse) {
