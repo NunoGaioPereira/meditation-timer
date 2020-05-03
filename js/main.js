@@ -39,6 +39,11 @@ const app = () => {
     let hour = 0;
     let minute = 10;
 
+    var now;
+    var end;
+    var secondsLeft;
+    var pauseStart = 0;
+
     // Video toggle
     const video_check = document.querySelector('.videoCheck');
     let videoCheck = video_check.checked;
@@ -153,8 +158,18 @@ const app = () => {
     }
 
     function openModal () {
-        fakeDuration = min_element.value * 60;
-        timeDisplay.textContent = `${fakeDuration/60}:00`;
+        pause = 0;
+        sessionLength = min_element.value * 60;
+        // sessionLength = 5;
+        stopper = false;
+        // console.log("sesion: " + sessionLength);
+        now = Date.now();
+        end = now + sessionLength * 1000;
+        secondsLeft = sessionLength;
+        // console.log(now)
+        // console.log(end)
+
+        timeDisplay.textContent = `${sessionLength/60}:00`;
         modal.classList.toggle('open');
         app_body.classList.toggle('open');
         play.classList.toggle('open');
@@ -202,7 +217,7 @@ const app = () => {
     // const outlineLenght = outline.getTotalLength();
     const outlineLenght = '1359.76';
         // Duration
-    let fakeDuration = min_element.value;
+    let sessionLength = min_element.value;
 
 
     // Animate outline
@@ -228,8 +243,8 @@ const app = () => {
         option.addEventListener('click', function(){
           // use function() to be able to use this
           song.currentTime = 0; // reset time
-          // fakeDuration = this.getAttribute('data-time');
-          // timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${Math.floor(fakeDuration % 60)}0`;
+          // sessionLength = this.getAttribute('data-time');
+          // timeDisplay.textContent = `${Math.floor(sessionLength / 60)}:${Math.floor(sessionLength % 60)}0`;
           // Pause everything
           // song.pause();
           // song.currentTime = 0;
@@ -244,11 +259,16 @@ const app = () => {
           song.play();
           play.src = "./includes/imgs/pause.svg";
           if(matchMedia('(pointer:fine)').matches) { video.play(); }
+          // timeInPause = Math.round((Date.now() - pauseStart) / 1000);
+          timeInPause = Date.now() - pauseStart;
+          end += timeInPause;
+          pauseStart = 0;
         }
         else {
           song.pause();
           play.src = "./includes/imgs/play.svg"; 
           if(matchMedia('(pointer:fine)').matches) { video.pause(); }
+          pauseStart = Date.now();
         }
     };
 
@@ -261,31 +281,60 @@ const app = () => {
         }
     };
 
+    var elapsedT = 0;
     // Animate circle
+    var stopper = false;
     song.ontimeupdate = () => {
-        let currentTime = song.currentTime;
-        let elapsed = fakeDuration - currentTime;
-        let seconds = Math.floor(elapsed % 60);
-        let minutes = Math.floor(elapsed / 60);
+        if(stopper == false)
+        {
+            var timeLeft = (end - Date.now()) / 1000;
+            secondsLeft = Math.round(timeLeft);
+            // secondsLeft = end - Date.now();
+            // console.log(secondsLeft);
+            let currentTime = song.currentTime;
+            let elapsed = sessionLength - currentTime;
+            // let seconds = Math.floor(elapsed % 60);
+            // let minutes = Math.floor(elapsed / 60);
+            let seconds = Math.floor(secondsLeft % 60);
+            let minutes = Math.floor(secondsLeft / 60);
 
-        // Animate circle
-        let progress = outlineLenght - (currentTime / fakeDuration) * outlineLenght;
-        outline.style.strokeDashoffset = progress + "px";
+            // Animate circle
+            // let progress = outlineLenght - (currentTime / sessionLength) * outlineLenght;
+            // let progress = outlineLenght - (((end - Date.now())/1000) / sessionLength) * outlineLenght;
+            let progress = outlineLenght - ((sessionLength - timeLeft) / sessionLength) * outlineLenght;
+            // console.log("Progress: " + progress);
+            // console.log("currentTime: " + currentTime);
+            // console.log("Test: " + (sessionLength - (end - Date.now())/1000));
+            // console.log("Time left: " + timeLeft);
+            outline.style.strokeDashoffset = progress + "px";
 
-        // Animate text
-        if(seconds == 0) { timeDisplay.textContent = `${minutes}:${seconds}0`; }
-        else if(seconds < 10) { timeDisplay.textContent = `${minutes}:0${seconds}`; }
-        else { timeDisplay.textContent = `${minutes}:${seconds}`; }
+            // Animate text
+            if(seconds == 0) { timeDisplay.textContent = `${minutes}:${seconds}0`; }
+            else if(seconds < 10) { timeDisplay.textContent = `${minutes}:0${seconds}`; }
+            else { timeDisplay.textContent = `${minutes}:${seconds}`; }
 
-        if(currentTime >= fakeDuration) {
-          song.pause();
-          song.currentTime = 0;
-          play.src = './includes/imgs/play.svg';
-          if(matchMedia('(pointer:fine)').matches) { video.pause(); }
-          var audio = new Audio('./includes/sounds/bowl.mp3');
-          audio.loop = false;
-          audio.volume = 0.5;
-          audio.play(); 
+            // if(currentTime >= sessionLength) {
+            // if(secondsLeft < 0) {
+            // if(secondsLeft < 0 && stopper == false) {
+            if(timeLeft <= 0 && stopper == false) {   
+
+              song.pause();
+              song.currentTime = 0;
+              play.src = './includes/imgs/play.svg';
+              if(matchMedia('(pointer:fine)').matches) { video.pause(); }
+              var endAudio = new Audio('./includes/sounds/bowl.mp3');
+              endAudio.loop = false;
+              endAudio.volume = 0.5;
+              endAudio.play(); 
+              outline.style.strokeDashoffset = outlineLenght + "px";
+              stopper = true;
+            }
+            song.onended = function() {
+                if(secondsLeft > 0  && stopper == false) {
+                    song.currentTime = 0;
+                    song.play();
+                }
+            };
         }
     }
 
