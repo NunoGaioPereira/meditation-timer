@@ -13,8 +13,8 @@
 <body class="light">
     <div class="app">
         <div class="info">
-            <img class="logo" src="./includes/imgs/logo_pink.png">
-            <h3 class="noselect">Meditate</h3>
+            <img class="logo noselect" src="./includes/imgs/logo_pink.png">
+            <h3 class="noselect">zenstate</h3>
         </div>
         <div class="main">
             <div class="time-picker" data-time="00:10">
@@ -97,14 +97,14 @@
 
             <div class="settings">
                 <div class="setting video-set">
-                    <span class="setting-title">Video</span>
+                    <span class="setting-title noselect">Video</span>
                     <label class="switch">
                       <input type="checkbox" class="videoCheck">
                       <span class="slider round"></span>
                     </label>
                 </div>
                 <div class="setting">
-                    <span class="setting-title">Dark theme</span>
+                    <span class="setting-title noselect">Dark theme</span>
                     <label class="switch">
                       <input type="checkbox" class="themeCheck">
                       <span class="slider round"></span>
@@ -113,7 +113,7 @@
             </div>  
 
         </div>
-        <a href="#/" id="start">Start</a>
+        <a href="#/" id="start" class="noselect">Start</a>
     </div>
 
     <div class="modal">
