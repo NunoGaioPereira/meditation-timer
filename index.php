@@ -117,7 +117,7 @@
                     </svg> -->
                 </button>
                 <button data-sound="./includes/sounds/wind.mp3" data-video="./includes/video/wind.mp4">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    <!-- <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 50 50" xml:space="preserve">
                         <g>
                             <path class="st0" d="M40.5,48.8c-1.5-0.3-3-1.3-4-2.3c-0.8-1.2-1.5-3-1.5-4.3c0-0.5,0-0.7,0.2-0.8c0.7-0.7,1.7-0.2,1.7,0.7
@@ -130,6 +130,16 @@
                                 c-0.5-0.3-0.7-1.2-0.3-1.5l0.3-0.3h13.3c10.9,0,13.3,0,13.8-0.2c2.2-0.3,3.6-2.2,4-4.3C47.5,6,45.5,3.4,42.7,3
                                 c-2.5-0.5-5.1,1.3-5.6,4c-0.2,0.3-0.2,0.8-0.2,1c0,0.8-1,1.3-1.7,0.7C35,8.5,35,8.3,35,7.8c0-2,1-4.1,2.7-5.3c2.5-2,6-2,8.6,0
                                 C48,3.8,49,5.8,49,8c0,2.7-1.5,5.1-3.8,6.3c-1.7,0.8-0.8,0.7-15.8,0.7C20.5,15,16,15,16,15L16,15z"/>
+                        </g>
+                    </svg> -->
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 50 50" xml:space="preserve">
+                        <g>
+                            <path class="st0" d="M42.7,18.9c0,9.8-7.9,17.7-17.7,17.7S7.3,28.7,7.3,18.9C7.3,9.2,15.2,1.3,25,1.3S42.7,9.2,42.7,18.9L42.7,18.9
+                                z"/>
+                            <line class="st1" x1="25" y1="48.8" x2="25" y2="14.3"/>
+                            <line class="st1" x1="25.1" y1="23.4" x2="30.6" y2="18"/>
+                            <line class="st1" x1="24.9" y1="31" x2="19.5" y2="25.6"/>
                         </g>
                     </svg>
                 </button>

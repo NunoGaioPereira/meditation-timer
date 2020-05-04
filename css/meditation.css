@@ -189,15 +189,16 @@ h3 {
   height: 100%;
 }
 
-.sound-picker button:nth-child(1) svg, .sound-picker button:nth-child(3) svg {
+.sound-picker button:nth-child(1) svg, .sound-picker button:nth-child(2) svg {
     fill: var(--background);
     transition: fill 0.4s ease-in-out;
 }
 
-.sound-picker button:nth-child(2) svg {
-    /*stroke: var(--background);
-    stroke-width: 2px; */
-    fill: var(--background);
+.sound-picker button:nth-child(3) svg {
+    stroke: var(--background);
+    stroke-width: 2px; 
+    fill: none; 
+    /*fill: var(--background);*/
     transition: stroke 0.4s ease-in-out;
 }
 
