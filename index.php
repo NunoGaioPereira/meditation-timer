@@ -12,6 +12,8 @@
 </head>
 <body class="light">
     <div class="loader">
+         <img class="noselect" src="./includes/imgs/logo_pink.png">
+         <h3 class="noselect">zenstate</h3>
          <svg class="spinner" width="24" height="24" viewBox="0 0 24 24">
             <g fill="none" fill-rule="nonzero">
                 <path class="ring_thumb" fill="#5a6174" d="M17.945 3.958A9.955 9.955 0 0 0 12 2c-2.19 0-4.217.705-5.865 1.9L5.131 2.16A11.945 11.945 0 0 1 12 0c2.59 0 4.99.82 6.95 2.217l-1.005 1.741z"></path>

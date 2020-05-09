@@ -1,4 +1,10 @@
 const app = () => {
+
+    window.addEventListener('load', function(){
+        const loader = document.querySelector('.loader');
+        loader.className += ' hidden';
+    });
+
     const bd = document.getElementsByTagName('body')[0];
     const time_picker_element = document.querySelector('.time-picker');
 

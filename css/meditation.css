@@ -43,17 +43,37 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
+
+.loader.hidden {
+  animation: fadeOut 1s;
+  animation-fill-mode: forwards;
+}
+
+.loader img {
+  width: 60px;
+}
+
+.loader h3 { font-size: 28px; }
 
 .loader svg {
   width: 40px;
   height: 40px;
   animation: spinner 1s linear infinite;
+  margin-top: 20px;
 }
 
 @keyframes spinner {
-  from {transform: rotate(0deg);}
-  to {transform: rotate(360deg);}
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+@keyframes fadeOut {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 input[type="number"]::-webkit-outer-spin-button, 
